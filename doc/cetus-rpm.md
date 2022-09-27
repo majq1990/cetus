@@ -42,3 +42,13 @@ build\_cetus\_rpm.sh脚本接受3个参数： -v 指定version信息；-r 指定
 ```
 rpm -ivh --prefix=/home/user/cetus_install cetus-version-release.el6.x86_64.rpm
 ```
+
+
+## 3  注意
+由于在el8下，打包一直在debuginfo打包报错，
+直接执行
+echo '%debug_package %{nil}' >> ~/.rpmmacros
+
+然后打包，即可。
+
+
