@@ -68,7 +68,7 @@ static void get_current_time_str(GString *str) {
         return;
     }
     struct tm *tm;
-    GTimeVal tv;
+    GDateTime tv;
     time_t  t;
 
     g_get_current_time(&tv);

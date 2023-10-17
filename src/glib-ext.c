@@ -95,13 +95,13 @@ strleq(const gchar *a, gsize a_len, const gchar *b, gsize b_len)
 }
 
 /**
- * calculate the difference between two GTimeVal values, in usec
+ * calculate the difference between two GDateTime values, in usec
  * positive return value in *tdiff means *told is indeed "earlier" than *tnew,
  * negative return value means the reverse
  * Caller is responsible for passing valid pointers
  */
 void
-ge_gtimeval_diff(GTimeVal *told, GTimeVal *tnew, gint64 *tdiff)
+ge_GDateTime_diff(GDateTime *told, GDateTime *tnew, gint64 *tdiff)
 {
     *tdiff = (gint64)tnew->tv_sec - told->tv_sec;
     *tdiff *= G_USEC_PER_SEC;

@@ -184,7 +184,7 @@ static int
 chassis_log_update_timestamp(chassis_log *log)
 {
     struct tm *tm;
-    GTimeVal tv;
+    GDateTime tv;
     time_t t;
     GString *s = log->log_ts_str;
 

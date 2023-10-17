@@ -290,13 +290,13 @@ network_backends_remove(network_backends_t *bs, guint index)
 int
 network_backends_check(network_backends_t *bs)
 {
-    GTimeVal now;
+    GDateTime now;
     guint i;
     int backends_woken_up = 0;
     gint64 t_diff;
 
     g_get_current_time(&now);
-    ge_gtimeval_diff(&bs->backend_last_check, &now, &t_diff);
+    ge_GDateTime_diff(&bs->backend_last_check, &now, &t_diff);
 
     /* check max(once a second) */
     /* this also covers the "time went backards" case */
@@ -340,7 +340,7 @@ int
 network_backends_modify(network_backends_t *bs, guint ndx,
         backend_type_t type, backend_state_t state, backend_state_t oldstate)
 {
-    GTimeVal now;
+    GDateTime now;
     g_get_current_time(&now);
     if (ndx >= network_backends_count(bs))
         return -1;

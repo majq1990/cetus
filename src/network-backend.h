@@ -76,7 +76,7 @@ typedef struct {
     backend_state_t state;   /**< UP or DOWN */
     backend_type_t type;     /**< ReadWrite or ReadOnly */
 
-    GTimeVal state_since;    /**< timestamp of the last state-change */
+    GDateTime state_since;    /**< timestamp of the last state-change */
 
     network_connection_pool *pool; /**< the pool of open connections */
 
@@ -106,7 +106,7 @@ typedef struct {
     RSA *rsa;
 #endif
     /* GHashTable *ip_table; */
-    GTimeVal backend_last_check;
+    GDateTime backend_last_check;
     GPtrArray *groups;          /* GPtrArray<network_group_t *> */
 } network_backends_t;
 
